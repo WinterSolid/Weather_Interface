@@ -13,11 +13,14 @@ url = BASE_URL + "appid="+ api_key + "&q=" + CITY
 
 #conversions
 def tempConversion(kelvin):
-    farenheit = kelvin * 9/5 - 459.67
+    fahrenheit = kelvin * 9/5 - 459.67
     celcius = kelvin - 273.15
-    return celcius, farenheit
+    return celcius, fahrenheit
 
 response = requests.get(url).json()
-Kelvin = response['main']['temp']
-celc,,temp_farenheit = tempConversion(kelvin)
+temp_kelvin = response['main']['temp']
+temp_celcius, temp_fahrenheit = tempConversion(temp_kelvin)
+
+temp_kelvin = response['main']['feels_like']
+feels_like_temp_celcius, feels_like_temp_fahrenheit = tempConversion(feels_like_temp_kelvin)
 print(response)
