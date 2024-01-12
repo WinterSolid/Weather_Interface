@@ -14,13 +14,17 @@ url = BASE_URL + "appid="+ api_key + "&q=" + CITY
 #conversions
 def tempConversion(kelvin):
     fahrenheit = kelvin * 9/5 - 459.67
-    celcius = kelvin - 273.15
-    return celcius, fahrenheit
+    celsius = kelvin - 273.15
+    return celsius, fahrenheit
 
 response = requests.get(url).json()
 temp_kelvin = response['main']['temp']
-temp_celcius, temp_fahrenheit = tempConversion(temp_kelvin)
+temp_celsius, temp_fahrenheit = tempConversion(temp_kelvin)
 
-temp_kelvin = response['main']['feels_like']
-feels_like_temp_celcius, feels_like_temp_fahrenheit = tempConversion(feels_like_temp_kelvin)
+feels_like_kelvin = response['main']['feels_like']
+feels_like_temp_celsius, feels_like_temp_fahrenheit = tempConversion(feels_like_kelvin)
+wind_speed = ['wind']['speed']
+sunrise_time = dt.datetime.utcfromtimestamp(response['sys']['sunrise'] + response['timezone'])
+sunset_time = dt.datetime.utcfromtimestamp(response['sys']['sunset'] + response['timezone'])
+description = response['weather'][0]['description']
 print(response)
