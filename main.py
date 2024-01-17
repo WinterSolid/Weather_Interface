@@ -23,8 +23,10 @@ temp_celsius, temp_fahrenheit = tempConversion(temp_kelvin)
 
 feels_like_kelvin = response['main']['feels_like']
 feels_like_temp_celsius, feels_like_temp_fahrenheit = tempConversion(feels_like_kelvin)
-wind_speed = ['wind']['speed']
+wind_speed = response['wind']['speed']
 sunrise_time = dt.datetime.utcfromtimestamp(response['sys']['sunrise'] + response['timezone'])
 sunset_time = dt.datetime.utcfromtimestamp(response['sys']['sunset'] + response['timezone'])
 description = response['weather'][0]['description']
-print(response)
+print(f'Temperature in: {CITY} is {temp_fahrenheit: .2f}F / {temp_celsius: .2f}C')
+print(f'{CITY} feeels like {feels_like_temp_fahrenheit: .2f}F or {feels_like_temp_celsius: .2f}C')
+print(f'Wind speed of {wind_speed}')
