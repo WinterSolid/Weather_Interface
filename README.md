@@ -1,4 +1,4 @@
 # Weather_ApI
 
 Call API and format results 
-<img width="415" alt="Screenshot 2024-01-11 at 5 54 38 PM" src="https://github.com/WinterSolid/Weather_Interface/assets/58896705/1af3797b-2031-4a6d-a7b9-d6c4cb248f21">
+<img width="377" alt="Screenshot 2024-01-17 at 2 34 20 PM" src="https://github.com/WinterSolid/Weather_Interface/assets/58896705/faba605f-e0b2-4ce0-bb9c-21710a916f5b">
